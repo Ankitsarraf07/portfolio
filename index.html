@@ -2,574 +2,1936 @@
 <html lang="en">
 
 <head>
-	<title>Ankit's Portfolio</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description"
+    content="Ankit Kumar - Full Stack & Flutter Developer | MCA Student at LPU | MERN Stack | Portfolio" />
+  <meta name="keywords" content="Ankit Kumar, Portfolio, Full Stack Developer, Flutter, MERN Stack, MCA, LPU" />
+  <meta name="robots" content="INDEX,FOLLOW" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ankit Kumar — Full Stack Developer Portfolio</title>
 
-	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Phudu:wght@300..900&display=swap"
+    rel="stylesheet" />
 
-	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-	<link rel="stylesheet" href="css/animate.css">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
 
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<link rel="stylesheet" href="css/magnific-popup.css">
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 
-	<link rel="stylesheet" href="css/aos.css">
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
-	<link rel="stylesheet" href="css/ionicons.min.css">
+  <style>
+    /* ===================== CSS Variables ===================== */
+    :root {
+      --heading-font: "Phudu", sans-serif;
+      --body-font: "Instrument Sans", sans-serif;
+      --accent: #FF5101;
+      --accent-dark: #d94000;
+      --black: #02090f;
+      --white: #ffffff;
+      --gray-light: #f5f5f5;
+      --gray-mid: #9ca3af;
+      --body-color: #374151;
+      --heading-color: #02090f;
+      --border-color: rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+      --shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    }
 
-	<link rel="stylesheet" href="css/flaticon.css">
-	<link rel="stylesheet" href="css/icomoon.css">
-	<link rel="stylesheet" href="css/style.css">
+    /* ===================== Reset ===================== */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    html {
+      scroll-behavior: smooth;
+    }
 
-	<style>
-		/*======================================
-//--//-->   ABOUT
-======================================*/
+    body {
+      font-family: var(--body-font);
+      color: var(--body-color);
+      background: var(--white);
+      overflow-x: hidden;
+    }
 
-		.about-mf .box-shadow-full {
-			padding-top: 4rem;
-			padding-bottom: 4rem;
-		}
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
 
-		.about-mf .about-img {
-			margin-bottom: 2rem;
-		}
+    a {
+      text-decoration: none;
+      color: inherit;
+      display: inline-block;
+      transition: var(--transition);
+    }
 
-		.about-mf .about-img img {
-			margin-left: 10px;
-		}
+    ul,
+    ol {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
 
+    button {
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+    }
 
-		.skill-mf .progress {
-			/* background-color: #cde1f8; */
-			margin: .5rem 0 1.2rem 0;
-			border-radius: 0;
-			height: .7rem;
-		}
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: var(--heading-font);
+      color: var(--heading-color);
+      line-height: 1.15;
+      margin: 0;
+    }
 
-		.skill-mf .progress .progress-bar {
-			height: .7rem;
-			background-color: #ffbd39;
-		}
+    p {
+      line-height: 1.7;
+      margin: 0;
+    }
 
+    /* ===================== Preloader ===================== */
+    .preloader {
+      position: fixed;
+      height: 100vh;
+      width: 100%;
+      left: 0;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      z-index: 9999;
+      overflow: hidden;
+    }
 
-		/* Animation styles */
-		#typing-animation {
-			position: relative;
-			font-size: 30px;
-			font-weight: bold;
-			color: rgb(255, 255, 255);
-			overflow: hidden;
-			white-space: nowrap;
-			animation: typing 3s steps(20, end) infinite;
-		}
+    .preloader svg {
+      position: absolute;
+      top: 0;
+      width: 100vw;
+      height: 110vh;
+      fill: var(--black);
+    }
 
-		#typing-animation:before {
-			content: "";
-			/* position: absolute; */
-			top: 0;
-			left: 0;
-			width: 0;
-			height: 100%;
-			background-color: #ccc;
-			animation: typing-cursor 0.5s ease-in-out infinite;
-		}
+    .preloader-heading .load-text {
+      font-size: 28px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 12px;
+      font-family: var(--body-font);
+      text-transform: uppercase;
+      z-index: 20;
+      position: relative;
+    }
 
-		@keyframes typing {
-			from {
-				width: 0;
-			}
+    .load-text span {
+      animation: loading 1s infinite alternate;
+    }
 
-			to {
-				width: 100%;
-			}
-		}
+    .load-text span:nth-child(1) {
+      animation-delay: 0s;
+    }
 
-		@keyframes typing-cursor {
-			from {
-				width: 5px;
-			}
+    .load-text span:nth-child(2) {
+      animation-delay: 0.1s;
+    }
 
-			to {
-				width: 0;
-			}
-		}
+    .load-text span:nth-child(3) {
+      animation-delay: 0.2s;
+    }
 
+    .load-text span:nth-child(4) {
+      animation-delay: 0.3s;
+    }
 
-		/* project image zoom effect */
+    .load-text span:nth-child(5) {
+      animation-delay: 0.4s;
+    }
 
-		.zoom-effect {
-			overflow: hidden;
-			transition: transform 0.3s ease-out;
-		}
+    .load-text span:nth-child(6) {
+      animation-delay: 0.5s;
+    }
 
-		.zoom-effect:hover {
-			transform: scale(1.1);
-		}
-	</style>
+    .load-text span:nth-child(7) {
+      animation-delay: 0.6s;
+    }
 
+    @keyframes loading {
+      0% {
+        opacity: 1;
+      }
 
+      100% {
+        opacity: 0.1;
+      }
+    }
+
+    /* ===================== Magic Cursor ===================== */
+    #magic-cursor {
+      position: fixed;
+      pointer-events: none;
+      z-index: 10000;
+      top: 0;
+      left: 0;
+    }
+
+    #ball {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      position: fixed;
+      top: -20px;
+      left: -20px;
+      pointer-events: none;
+      transition: width 0.3s, height 0.3s, border-color 0.3s;
+      mix-blend-mode: difference;
+    }
+
+    body.tw-magic-cursor {
+      cursor: none;
+    }
+
+    /* ===================== Back to Top ===================== */
+    .back-to-top-wrapper {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+      transition: var(--transition);
+    }
+
+    .back-to-top-wrapper.back-to-top-btn-show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .back-to-top-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--black);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--accent);
+      transition: var(--transition);
+    }
+
+    .back-to-top-btn:hover {
+      background: var(--accent);
+    }
+
+    /* ===================== Header ===================== */
+    .header {
+      position: relative;
+      z-index: 99;
+      border-bottom: 1px solid var(--border-color);
+      padding: 20px 0;
+      transition: var(--transition);
+      background: var(--white);
+    }
+
+    .header.fixed-header {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(16px);
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 24px rgba(0, 0, 0, 0.08);
+      animation: slideDown 0.35s ease-out;
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+      }
+
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-logo {
+      font-family: var(--heading-font);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--heading-color);
+      letter-spacing: -0.5px;
+    }
+
+    .header-logo span {
+      color: var(--accent);
+    }
+
+    .header-nav ul {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+
+    .header-nav ul li a {
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--body-color);
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .header-nav ul li a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    .header-nav ul li a:hover,
+    .header-nav ul li a.active {
+      color: var(--accent);
+    }
+
+    .header-nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    .header-btn {
+      background: var(--black);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .header-btn:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .hamburger-btn {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 6px;
+    }
+
+    .hamburger-btn span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--heading-color);
+      transition: var(--transition);
+      border-radius: 2px;
+    }
+
+    @media (max-width: 991px) {
+      .header-nav {
+        display: none;
+      }
+
+      .hamburger-btn {
+        display: flex;
+      }
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--black);
+      z-index: 9998;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      font-family: var(--heading-font);
+      font-size: 2rem;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .mobile-menu a:hover {
+      color: var(--accent);
+    }
+
+    .mobile-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      color: #fff;
+      font-size: 2rem;
+    }
+
+    /* ===================== Hero / Banner ===================== */
+    .banner-area {
+      background: #f4f2ee;
+      padding: 80px 0 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .banner-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--white);
+      border: 1px solid var(--border-color);
+      border-radius: 100px;
+      padding: 8px 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--body-color);
+      margin-bottom: 24px;
+    }
+
+    .banner-tag .dot {
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .banner-big-title {
+      font-family: var(--heading-font);
+      font-size: clamp(3rem, 8vw, 9rem);
+      font-weight: 800;
+      color: var(--heading-color);
+      line-height: 0.95;
+      margin-bottom: 40px;
+      text-transform: lowercase;
+    }
+
+    .banner-big-title span {
+      color: var(--accent);
+    }
+
+    .banner-left h2 {
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: var(--heading-color);
+    }
+
+    .banner-left h2 span {
+      display: block;
+      color: var(--accent);
+    }
+
+    .banner-skills {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .banner-skill-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .banner-skill-item .plus-icon {
+      width: 22px;
+      height: 22px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    .banner-center-text {
+      font-size: clamp(0.95rem, 1.8vw, 1.3rem);
+      color: var(--body-color);
+      max-width: 320px;
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    .banner-view-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--black);
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .banner-view-btn:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .banner-counters {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: flex-end;
+    }
+
+    .counter-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 24px 28px;
+      box-shadow: var(--shadow);
+      min-width: 180px;
+      position: relative;
+    }
+
+    .counter-card.dark {
+      background: var(--black);
+    }
+
+    .counter-num {
+      font-family: var(--heading-font);
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--heading-color);
+    }
+
+    .counter-card.dark .counter-num {
+      color: #fff;
+    }
+
+    .counter-label {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--body-color);
+      margin-top: 6px;
+    }
+
+    .counter-card.dark .counter-label {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .banner-img-wrap {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 360px;
+      z-index: 2;
+    }
+
+    @media (max-width: 991px) {
+      .banner-img-wrap {
+        display: none;
+      }
+
+      .banner-counters {
+        align-items: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .counter-card {
+        min-width: auto;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .banner-area {
+        padding: 60px 0 0;
+      }
+
+      .banner-bottom-row {
+        flex-direction: column;
+        gap: 32px;
+      }
+    }
+
+    /* ===================== About Section ===================== */
+    .about-section {
+      padding: 100px 0;
+      background: var(--white);
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .section-label::before {
+      content: '';
+      width: 24px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    .section-title {
+      font-family: var(--heading-font);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 700;
+      color: var(--heading-color);
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+
+    .about-img-wrap {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .about-img-wrap img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 20px;
+      transition: transform 0.6s ease;
+    }
+
+    .about-img-wrap:hover img {
+      transform: scale(1.04);
+    }
+
+    .about-info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 28px 0;
+    }
+
+    .info-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .info-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent);
+    }
+
+    .info-value {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--heading-color);
+    }
+
+    /* ===================== Skills ===================== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .skill-item {}
+
+    .skill-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .skill-bar {
+      height: 6px;
+      background: #e5e7eb;
+      border-radius: 100px;
+      overflow: hidden;
+    }
+
+    .skill-fill {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 100px;
+      width: 0;
+      transition: width 1.2s ease;
+    }
+
+    /* ===================== Education ===================== */
+    .education-section {
+      padding: 100px 0;
+      background: #f4f2ee;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 32px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 40px;
+      padding: 32px;
+      background: var(--white);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .timeline-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -38px;
+      top: 36px;
+      width: 14px;
+      height: 14px;
+      background: var(--accent);
+      border-radius: 50%;
+      border: 3px solid var(--white);
+      box-shadow: 0 0 0 3px var(--accent);
+    }
+
+    .timeline-date {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: rgba(255, 81, 1, 0.08);
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 10px;
+    }
+
+    .timeline-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--heading-color);
+      margin-bottom: 6px;
+    }
+
+    .timeline-sub {
+      font-size: 0.9rem;
+      color: var(--body-color);
+      font-weight: 500;
+    }
+
+    .timeline-grade {
+      font-size: 0.85rem;
+      color: var(--gray-mid);
+      margin-top: 8px;
+    }
+
+    .cv-btn-wrap {
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    .cv-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--black);
+      color: #fff;
+      padding: 18px 44px;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: var(--transition);
+    }
+
+    .cv-btn:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    /* ===================== Projects ===================== */
+    .projects-section {
+      padding: 100px 0;
+      background: var(--white);
+    }
+
+    .projects-intro {
+      margin-bottom: 60px;
+    }
+
+    .project-card {
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      height: 100%;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.14);
+    }
+
+    .project-thumb {
+      height: 220px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .project-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .project-card:hover .project-thumb img {
+      transform: scale(1.1);
+    }
+
+    .project-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(2, 9, 15, 0.7) 0%, transparent 60%);
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .project-card:hover .project-overlay {
+      opacity: 1;
+    }
+
+    .project-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .project-body {
+      padding: 24px;
+    }
+
+    .project-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--heading-color);
+      margin-bottom: 8px;
+    }
+
+    .project-title a:hover {
+      color: var(--accent);
+    }
+
+    .project-desc {
+      font-size: 0.9rem;
+      color: var(--body-color);
+      line-height: 1.6;
+    }
+
+    /* ===================== GitHub CTA ===================== */
+    .github-cta {
+      padding: 100px 0;
+      background: var(--black);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .github-cta::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255, 81, 1, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .github-cta h2 {
+      font-family: var(--heading-font);
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .github-cta h2 span {
+      color: var(--accent);
+    }
+
+    .github-cta p {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 1.1rem;
+      max-width: 520px;
+      margin: 0 auto 36px;
+    }
+
+    .github-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent);
+      color: #fff;
+      padding: 18px 44px;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-transform: uppercase;
+      transition: var(--transition);
+    }
+
+    .github-btn:hover {
+      background: #fff;
+      color: var(--black);
+    }
+
+    /* ===================== Contact ===================== */
+    .contact-section {
+      padding: 100px 0;
+      background: #f4f2ee;
+    }
+
+    .contact-form-wrap {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 48px;
+      box-shadow: var(--shadow);
+    }
+
+    .form-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--body-color);
+      margin-bottom: 8px;
+    }
+
+    .form-control {
+      border: 1.5px solid var(--border-color);
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-family: var(--body-font);
+      font-size: 0.95rem;
+      transition: border-color 0.3s ease;
+      background: var(--gray-light);
+    }
+
+    .form-control:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(255, 81, 1, 0.1);
+      outline: none;
+      background: #fff;
+    }
+
+    .submit-btn {
+      background: var(--black);
+      color: #fff;
+      padding: 16px 40px;
+      border-radius: 100px;
+      font-family: var(--body-font);
+      font-weight: 700;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      width: 100%;
+      transition: var(--transition);
+    }
+
+    .submit-btn:hover {
+      background: var(--accent);
+    }
+
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .contact-info-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--black);
+      color: var(--accent);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .contact-info-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gray-mid);
+      margin-bottom: 4px;
+    }
+
+    .contact-info-value {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--heading-color);
+    }
+
+    /* ===================== Footer ===================== */
+    .footer-area {
+      background: var(--black);
+      padding: 60px 0 32px;
+    }
+
+    .footer-logo {
+      font-family: var(--heading-font);
+      font-size: 2rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .footer-logo span {
+      color: var(--accent);
+    }
+
+    .footer-tagline {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.95rem;
+      max-width: 320px;
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    .footer-social-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .footer-social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 100px;
+      padding: 10px 20px;
+      transition: var(--transition);
+    }
+
+    .footer-social-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .footer-divider {
+      border-color: rgba(255, 255, 255, 0.08);
+      margin: 40px 0 24px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-copy {
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 0.85rem;
+    }
+
+    .footer-copy span {
+      color: var(--accent);
+    }
+
+    /* ===================== Floating Labels ===================== */
+    .floating-badge {
+      position: absolute;
+      background: var(--white);
+      border-radius: 12px;
+      padding: 14px 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      animation: floatUpDown 3s ease-in-out infinite;
+    }
+
+    @keyframes floatUpDown {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .hero-bottom-border {
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent) 0%, transparent 100%);
+      margin-top: 80px;
+    }
+
+    /* ===================== Utilities ===================== */
+    .text-accent {
+      color: var(--accent);
+    }
+
+    .fw-700 {
+      font-weight: 700;
+    }
+
+    .mb-0 {
+      margin-bottom: 0 !important;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Scroll progress */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: var(--accent);
+      z-index: 10001;
+      width: 0;
+      transition: width 0.1s linear;
+    }
+  </style>
 </head>
 
-<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-
-
-	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-		<div class="container">
-			<a class="navbar-brand" href="index.html">Ankit kumar</a>
-			<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
-				data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="oi oi-menu"></span> Menu
-			</button>
-
-			<div class="collapse navbar-collapse" id="ftco-nav">
-				<ul class="navbar-nav nav ml-auto">
-					<li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-					<li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-					<!-- <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li> -->
-					<li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
-					<li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-	<section id="home-section" class="hero">
-		<div class="home-slider  owl-carousel">
-			<div class="slider-item ">
-				<div class="overlay"></div>
-				<div class="container">
-					<div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end"
-						data-scrollax-parent="true">
-						<!-- <div class="one-third js-fullheight order-md-last img" style="background-image:url(images/bg_1.png);"> 
-	          	 <div class="overlay"></div>
-	          	</div>-->
-						<div class="one-forth d-flex  align-items-center ftco-animate"
-							data-scrollax=" properties: { translateY: '70%' }">
-							<div class="text">
-								<span class="subheading">Hey!!</span>
-								<h1 class="mb-4 mt-3">I'm <span>Ankit kumar</span></h1>
-
-								<!-- Element to contain animated typing -->
-								<span id="typing-animation"></span>
-
-								<script>
-
-									// Initialize the typing animation
-									const typingAnimationElement = document.getElementById('typing-animation');
-
-									// Create an array of typing text
-									const typingTexts = [
-
-										'Web developer',
-
-									];
-
-									// Create a function to display the typing animation for a given text
-									function playTypingAnimation(text) {
-										// Loop through each character and add it to the element
-										for (let i = 0; i < text.length; i++) {
-											setTimeout(() => {
-												typingAnimationElement.textContent += text[i];
-											}, i * 200); // Increase the delay to slow down the typing animation
-										}
-
-										// Once the animation is complete, reset the text and start over
-										setTimeout(() => {
-											typingAnimationElement.textContent = '';
-											playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
-										}, text.length * 200);
-									}
-
-									// Start the typing animation loop
-									playTypingAnimation(typingTexts[0]);
-
-								</script>
-
-								<br>
-								<br>
-								<h2>A MCA STUDENT</h2>
-								<!-- <h2 class="d-flex" style="margin-bottom: 0">With over 5 years of experience</h2> -->
-								<!-- <br> -->
-								<!-- <p><a href="https://www.youtube.com/@RishabhMishraOfficial" class="btn btn-primary py-3 px-4">YouTube</a>  -->
-								<p></p><a href="https://github.com/Ankitsarraf07"
-									class="btn btn-white btn-outline-white py-3 px-4">My works</a></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-
-
-	<section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
-		<div class="container">
-			<div class="row">
-				<div class="row d-flex align-items-stretch">
-					<!-- <div class="row d-flex"> -->
-					<div class="col-md-6 col-lg-5 d-flex">
-						<div class="img-about img d-flex align-items-stretch">
-							<div class="overlay">
-								<div class="row">
-									<div class="col-sm-6 col-md-5">
-										<div class="about-img">
-											<img src="images/about-me.png" class="img-fluid rounded b-shadow-a" alt="">
-										</div>
-									</div>
-									<!-- Details next to profile image -->
-									<div class="col-sm-6 col-md-7">
-										<div class="about-info">
-											<p><span class="title-s">Name: </span> <span>Ankit Kumar</span></p>
-											<p><span class="title-s">course: </span> <span>MCA</span></p>
-											<!-- <p><span class="title-s">Experience: </span> <span>5 Years 3 Months</span></p> -->
-											<p><span class="title-s">Address: </span> <span>Phagwara,Punjab,India</span>
-											</p>
-										</div>
-									</div>
-								</div>
-
-								<div class="skill-mf">
-									<p class="title-s">Skills</p>
-									<span>SQL</span> <span class="pull-right">70%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 70%;"
-											aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-									</div>
-
-									<!-- <span>PYTHON</span> <span class="pull-right">70%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 70%"
-											aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-									</div> -->
-
-									<!-- <span>Data Visualization</span> <span class="pull-right">90%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div> -->
-
-									<span>MERN Stack</span> <span class="pull-right">85%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 85%"
-											aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-									</div>
-
-									<span>Core Java</span> <span class="pull-right">80%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 80%"
-											aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-									</div>
-									<span>Flutter</span> <span class="pull-right">80%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 80%"
-											aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
-						<div class="row justify-content-start pb-3">
-							<div class="col-md-12 heading-section ftco-animate">
-
-								<h1 class="big">About Me</h1>
-								<h2 class="mb-4">About Me</h2>
-
-								<!-- <p>I am a motivated MCA student with a strong foundation in c++, java. I
-									have hands-on experience in web development,
-									database management, and software engineering. Through academic projects, I've
-									developed problem-solving, analytical,
-									and teamwork skills. My interests include software development, web development, and
-									data analysis.
-									Eager to apply my skills in a professional setting, I am committed to continuous
-									learning and contributing to innovative projects..</p> -->
-								<p>
-									I am Ankit Kumar, an MCA student at Lovely Professional University and a budding
-									Full Stack & Flutter Developer skilled in the MERN stack (MongoDB, Express.js,
-									React.js, Node.js). I enjoy building real-world web and mobile applications that
-									solve problems and improve user experience.
-
-									Additionally,
-									During my training at GRAStech, I worked in a 4-member team to build a hotel booking
-									website, handling React.js frontend and responsive UI design. I’ve also built
-									projects like a full-stack Vaditra YouTube API music player platform.
-
-									My skills include C++, Java, SQL, React.js, Node.js, MongoDB, Flutter, with strong
-									fundamentals in DSA, OOP, DBMS, OS, and REST APIs. I am a quick learner who enjoys
-									teamwork and problem solving, and I’m looking for internship or entry-level software
-									developer opportunities to grow and contribute.
-								</p>
-								<ul class="about-info mt-4 px-md-0 px-2">
-									<li class="d-flex"><span>Profile:</span> <span>Web & mobile app developer</span>
-									</li>
-									<li class="d-flex"><span>Programming: </span> <span>java , C++ , SQL
-										</span></li>
-
-									<li class="d-flex"><span>Education:</span> <span>Masters of Computer
-											Applications</span></li>
-									<li class="d-flex"><span>Frontend: :</span> <span>React.js, HTML5, CSS3,
-											JavaScript</span></li>
-
-
-
-									<li class="d-flex"><span>>Backend: </span> <span>Node.js, Express.js</span>
-									</li>
-									<li class="d-flex"><span>Database: </span><span>MongoDB</span></li>
-									<li class="d-flex"><span>Core Concepts: </span> <span>Data Structures &
-											Algorithms, OOP, DBMS, Operating Systems, REST APIs</span></li>
-									<li class="d-flex"><span>Tools: </span> <span>Git, GitHub, Postman, VS
-											Code</span></li>
-									<li class="d-flex"><span>Soft Skills: </span> <span>Technical Communication,
-											Team Collaboration, Logical Thinking, Problem Solving, & Learning
-											Mindset</span></li>
-
-
-
-									<li class="d-flex"><span>Interest:</span> <span>Music and Riding</span>
-									</li>
-
-								</ul>
-							</div>
-						</div>
-
-
-						<div class="counter-wrap ftco-animate d-flex mt-md-3">
-							<div class="text">
-								<p class="mb-4">
-									<span class="number" data-number="5">0</span> <span>+</span>
-									<span>&nbsp; Projects completed</span>
-								</p>
-								<p><a href="https://www.linkedin.com/in/ankit-kumar-ak07"
-										class="btn btn-primary py-3 px-3">LinkedIn</a></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-
-
-
-	<br>
-	<br>
-	<section>
-		<div class="row">
-			<h1 class="big-4">Education</h1>
-			<div class="underline"></div>
-		</div>
-		<br>
-
-		<div class="row">
-			<div class="col-md-6">
-				<div class="resume-wrap ftco-animate">
-					<span class="date">2025-2027</span>
-					<h2>Masters of Computer Application</h2>
-					<span class="position">Lovely professional University</span>
-					<p class="mt-4">Grade: Persuing.</p>
-				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="resume-wrap ftco-animate">
-					<span class="date">2022-2025</span>
-					<h2>Bachelor of Computer Application</h2>
-					<span class="position">L.N.Mishra College Of Business Management</span>
-					<p class="mt-4">Grade: First class distinction.</p>
-				</div>
-			</div>
-
-			<div class="col-md-6">
-				<div class="resume-wrap ftco-animate">
-					<span class="date">2020-2021</span>
-					<h2>Higher Secondary School</h2>
-					<span class="position">Shantiniketan Public School</span>
-					<p class="mt-4">Grade: First class distinction.</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="row justify-content-center mt-5">
-			<div class="col-md-6 text-center ftco-animate">
-				<p><a href="https://drive.google.com/file/d/1KnbzCLBgifaTW1kNOqsRBetTiGYkOqhf/view?usp=sharing"
-						class="btn btn-primary py-4 px-5">Download CV</a></p>
-			</div>
-		</div>
-		</div>
-	</section>
-
-	<section class="ftco-section" id="project-section">
-		<div class="container">
-			<div class="row justify-content-center mb-5 pb-5">
-				<div class="col-md-7 heading-section text-center ftco-animate">
-					<h1 class="big big-2">Projects</h1>
-					<h2 class="mb-4">Projects</h2>
-					<p>Below are the sample projects that i've worked on.</p>
-				</div>
-			</div>
-			<div class="row d-flex" style="justify-content:space-around">
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry justify-content-end">
-						<a href="https://ankitsarraf07.github.io/Drumkit/" class="block-20 zoom-effect"
-							style="background-image: url('images/proj_1.jpg');">
-						</a>
-						<div class="text mt-3 float-right d-block">
-
-							<h3 class="heading"><a href="https://ankitsarraf07.github.io/Drumkit/t">Digital Drumkit </a>
-							</h3>
-							<p>creating a beautiful sound using this drumkit.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 d-flex ftco-animate" style="justify-content:space-around">
-					<div class="blog-entry justify-content-end">
-						<a href="https://github.com/Ankitsarraf07/portfolio" class="block-20 zoom-effect"
-							style="background-image: url('images/proj_2.jpg');">
-						</a>
-						<div class="text mt-3 float-right d-block">
-
-							<h3 class="heading"><a href="https://github.com/Ankitsarraf07/portfolio">Portfolio</a></h3>
-							<p> developed my portfolio project</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 d-flex ftco-animate" style="justify-content:space-around">
-					<div class="blog-entry justify-content-end">
-						<a href="https://luxstay-frontend-react.onrender.com" class="block-20 zoom-effect"
-							style="background-image: url('images/proj_3.jpg');">
-						</a>
-						<div class="text mt-3 float-right d-block">
-
-							<h3 class="heading"><a href="https://luxstay-frontend-react.onrender.com">LuxStay</a></h3>
-							<p>Hotel Booking webpage-Reactjs</p>
-						</div>
-					</div>
-				</div>
-
-				<br>
-				<!-- added justify-content-center to center align the last two projects -->
-
-	</section>
-
-	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
-
-
-		<div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
-			<!-- <div class="container"> -->
-			<div class="row justify-content-center">
-				<div class="col-md-7 ftco-animate text-center">
-					<h2>More projects on<span> Github </span> </h2>
-					<div class="heading">
-						<h4> I love to solve business problems &amp; uncover hidden data stories </h4>
-						<br>
-						<p><a href="https://github.com/Ankitsarraf07" class="btn btn-primary py-3 px-5">GitHub</a></p>
-					</div>
-				</div>
-			</div>
-			<!-- </div> -->
-		</div>
-	</section>
-
-	<section id="contact-section">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-md-6">
-					<div class="contact-form">
-						<h2 class="text-center mb-4">Contact Me</h2>
-						<form action="https://api.web3forms.com/submit" method="POST">
-							<input type="hidden" name="access_key" value="13a90f16-bff5-4098-ae8c-3ee56c97e906">
-							<div class="mb-3">
-								<label for="name" class="form-label">Name</label>
-								<input type="text" class="form-control" name="name_" id="name"
-									placeholder="Enter your name">
-							</div>
-							<div class="mb-3">
-								<label for="email" class="form-label">Email address</label>
-								<input type="email" class="form-control" name="email" id="email"
-									placeholder="Enter your email">
-							</div>
-							<div class="mb-3">
-								<label for="message" class="form-label">Message</label>
-								<textarea class="form-control" id="message" rows="4" name="message"
-									placeholder="Your message"></textarea>
-							</div>
-
-							<button type="submit" class="btn btn-primary w-100">Submit</button>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-
-
-
-
-
-
-
-
-	<footer class="ftco-footer ftco-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 text-center">
-					<div class="container">
-						<br>
-						<br>
-						<div class="row justify-content-center">
-
-						</div>
-
-						<ul
-							class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
-							<li class="ftco-animate normal-txt">Find me on </li>
-
-							<li class="ftco-animate"><a href="https://www.linkedin.com/in/ankit-kumar-ak07"><span
-										class="icon-linkedin"></span></a></li>
-
-							<li class="ftco-animate"><a href="https://www.instagram.com/ankitt_sarraf/"><span
-										class="icon-instagram"></span></a></li>
-
-						</ul>
-
-					</div>
-
-				</div>
-			</div>
-		</div>
-	</footer>
-
-
-	<!-- loader -->
-	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
-			<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-			<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-				stroke="#F96D00" />
-		</svg></div>
-
-
-	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery-migrate-3.0.1.min.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.easing.1.3.js"></script>
-	<script src="js/jquery.waypoints.min.js"></script>
-	<script src="js/jquery.stellar.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/aos.js"></script>
-	<script src="js/jquery.animateNumber.min.js"></script>
-	<script src="js/scrollax.min.js"></script>
-
-	<script src="js/main.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<body class="tw-magic-cursor">
+
+  <!-- ==================== Scroll Progress ==================== -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ==================== Preloader ==================== -->
+  <div class="preloader" id="preloader">
+    <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+      <path id="preloaderSvg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+    </svg>
+    <div class="preloader-heading">
+      <div class="load-text">
+        <span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== Magic Cursor ==================== -->
+  <div id="magic-cursor">
+    <div id="ball"></div>
+  </div>
+
+  <!-- ==================== Back To Top ==================== -->
+  <div class="back-to-top-wrapper" id="backToTopWrapper">
+    <button id="back_to_top" class="back-to-top-btn">
+      <i class="ph ph-arrow-up" style="font-size:1.2rem;"></i>
+    </button>
+  </div>
+
+  <!-- ==================== Mobile Menu ==================== -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose"><i class="ph ph-x"></i></button>
+    <a href="#home-section" class="mobile-nav-link">Home</a>
+    <a href="#about-section" class="mobile-nav-link">About</a>
+    <a href="#project-section" class="mobile-nav-link">Projects</a>
+    <a href="#contact-section" class="mobile-nav-link">Contact</a>
+  </div>
+
+  <!-- ==================== Header ==================== -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="#home-section" class="header-logo">Ankit<span>.</span></a>
+        <nav class="header-nav">
+          <ul>
+            <li><a href="#home-section" class="active">Home</a></li>
+            <li><a href="#about-section">About</a></li>
+            <li><a href="#project-section">Projects</a></li>
+            <li><a href="#contact-section">Contact</a></li>
+          </ul>
+        </nav>
+        <a href="https://drive.google.com/file/d/1KnbzCLBgifaTW1kNOqsRBetTiGYkOqhf/view?usp=sharing" target="_blank"
+          class="header-btn d-none d-md-inline-block">Download CV</a>
+        <button class="hamburger-btn" id="hamburgerBtn">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== Hero Banner ==================== -->
+  <section class="banner-area" id="home-section">
+    <div class="container">
+      <!-- Top row -->
+      <!-- <div class="row align-items-center mb-4">
+        <div class="col-12">
+          <div data-aos="fade-up" data-aos-duration="800">
+            <div class="banner-tag">
+              <span class="dot"></span>
+              Available for opportunities
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- Big Title -->
+      <div class="row">
+        <div class="col-12">
+          <div data-aos="fade-up" data-aos-duration="900" data-aos-delay="100">
+            <h1 class="banner-big-title">Developer</h1>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom row: Left info | Center text+btn | Right counters -->
+      <div class="row align-items-end banner-bottom-row g-4 pb-5">
+        <!-- Left -->
+        <div class="col-lg-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150">
+          <h2 class="banner-left"
+            style="font-family:var(--heading-font);font-size:clamp(1.2rem,2vw,1.6rem);font-weight:600;margin-bottom:20px;">
+            Hello! I'm <span style="color:var(--accent);">Ankit Kumar</span><br />
+            a Full Stack &amp; Flutter Developer.
+          </h2>
+          <div class="banner-skills">
+            <div class="banner-skill-item"><span class="plus-icon"><i class="ph ph-plus"></i></span> Web Development
+              (MERN)</div>
+            <div class="banner-skill-item"><span class="plus-icon"><i class="ph ph-plus"></i></span> Flutter / Mobile
+              Apps</div>
+            <div class="banner-skill-item"><span class="plus-icon"><i class="ph ph-plus"></i></span> UI/UX Design</div>
+            <div class="banner-skill-item"><span class="plus-icon"><i class="ph ph-plus"></i></span> REST API
+              Integration</div>
+            <div class="banner-skill-item"><span class="plus-icon"><i class="ph ph-plus"></i></span> Database Management
+            </div>
+          </div>
+        </div>
+
+        <!-- Center -->
+        <div class="col-lg-4 text-center" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+          <p class="banner-center-text">
+            Building real-world web and mobile applications with clean code and purposeful design.
+          </p>
+          <a href="#project-section" class="banner-view-btn">
+            View Projects <i class="ph ph-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Right Counters -->
+        <div class="col-lg-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+          <div class="banner-counters">
+            <div class="counter-card">
+              <div class="counter-num">
+                <span class="purecounter" data-start="0" data-end="5" data-duration="2000">0</span>+
+              </div>
+              <div class="counter-label">Projects Completed</div>
+            </div>
+            <div class="counter-card dark">
+              <div class="counter-num">
+                <span class="purecounter" data-start="0" data-end="3" data-duration="2000">0</span>+
+              </div>
+              <div class="counter-label">Years Learning</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-bottom-border"></div>
+  </section>
+
+  <!-- ==================== About Section ==================== -->
+  <section class="about-section" id="about-section">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <!-- Image -->
+        <div class="col-lg-5" data-aos="fade-right" data-aos-duration="1000">
+          <div class="about-img-wrap">
+            <img src="images/about-me.png" alt="Ankit Kumar" />
+          </div>
+        </div>
+        <!-- Content -->
+        <div class="col-lg-7" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+          <div class="section-label">About Me</div>
+          <h2 class="section-title">MCA Student &amp; Full Stack Developer</h2>
+          <p style="margin-bottom:20px;font-size:1rem;line-height:1.8;">
+            I am Ankit Kumar, an MCA student at Lovely Professional University and a budding Full Stack &amp; Flutter
+            Developer skilled in the MERN stack (MongoDB, Express.js, React.js, Node.js). I enjoy building real-world
+            web and mobile applications that solve problems and improve user experience.
+          </p>
+          <p style="margin-bottom:28px;font-size:1rem;line-height:1.8;">
+            During my training at GRAStech, I worked in a 4-member team to build a hotel booking website, handling
+            React.js frontend and responsive UI design. My skills include C++, Java, SQL, React.js, Node.js, MongoDB,
+            Flutter, with strong fundamentals in DSA, OOP, DBMS, OS, and REST APIs.
+          </p>
+
+          <!-- Info grid -->
+          <div class="about-info-grid">
+            <div class="info-item">
+              <span class="info-label">Name</span>
+              <span class="info-value">Ankit Kumar</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Course</span>
+              <span class="info-value">MCA (Pursuing)</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Location</span>
+              <span class="info-value">Phagwara, Punjab, India</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Interest</span>
+              <span class="info-value">Music &amp; Riding</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Frontend</span>
+              <span class="info-value">React.js, HTML5, CSS3, JS</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Backend</span>
+              <span class="info-value">Node.js, Express.js</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Database</span>
+              <span class="info-value">MongoDB, SQL</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Tools</span>
+              <span class="info-value">Git, GitHub, Postman, VS Code</span>
+            </div>
+          </div>
+
+          <!-- Skills -->
+          <div class="skills-grid">
+            <div class="skill-item">
+              <div class="skill-header"><span>MERN Stack</span><span>85%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="85"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>SQL</span><span>70%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="70"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Core Java</span><span>80%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="80"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Flutter</span><span>80%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="80"></div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:32px;display:flex;gap:16px;flex-wrap:wrap;">
+            <a href="https://www.linkedin.com/in/ankit-kumar-ak07" target="_blank" class="banner-view-btn"
+              style="border-radius:10px;padding:14px 28px;">
+              <i class="ph ph-linkedin-logo"></i> LinkedIn
+            </a>
+            <a href="https://github.com/Ankitsarraf07" target="_blank" class="banner-view-btn"
+              style="background:var(--gray-light);color:var(--heading-color);border-radius:10px;padding:14px 28px;">
+              <i class="ph ph-github-logo"></i> GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Education Section ==================== -->
+  <section class="education-section" id="education-section">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <div class="section-label" style="justify-content:center;">Education</div>
+        <h2 class="section-title">Academic Background</h2>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+          <div class="timeline-item">
+            <span class="timeline-date">2025 – 2027</span>
+            <div class="timeline-title">Masters of Computer Application</div>
+            <div class="timeline-sub">Lovely Professional University</div>
+            <div class="timeline-grade">Grade: Pursuing</div>
+          </div>
+        </div>
+        <div class="col-lg-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+          <div class="timeline-item">
+            <span class="timeline-date">2022 – 2025</span>
+            <div class="timeline-title">Bachelor of Computer Application</div>
+            <div class="timeline-sub">L.N. Mishra College of Business Management</div>
+            <div class="timeline-grade">Grade: First Class Distinction</div>
+          </div>
+        </div>
+        <div class="col-lg-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+          <div class="timeline-item">
+            <span class="timeline-date">2020 – 2021</span>
+            <div class="timeline-title">Higher Secondary School</div>
+            <div class="timeline-sub">Shantiniketan Public School</div>
+            <div class="timeline-grade">Grade: First Class Distinction</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cv-btn-wrap" data-aos="fade-up" data-aos-delay="400">
+        <a href="https://drive.google.com/file/d/1KnbzCLBgifaTW1kNOqsRBetTiGYkOqhf/view?usp=sharing" target="_blank"
+          class="cv-btn">
+          <i class="ph ph-download-simple"></i> Download CV
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Projects Section ==================== -->
+  <section class="projects-section" id="project-section">
+    <div class="container">
+      <div class="row align-items-end mb-5 projects-intro">
+        <div class="col-lg-7" data-aos="fade-right">
+          <div class="section-label">Portfolio</div>
+          <h2 class="section-title">Projects I've Built</h2>
+        </div>
+        <div class="col-lg-5 text-lg-end" data-aos="fade-left">
+          <p style="color:var(--body-color);">Below are sample projects I've worked on — from interactive web apps to
+            full-stack platforms.</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Project 1 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+          <div class="project-card">
+            <div class="project-thumb">
+              <img src="images/proj_1.jpg" alt="Digital Drumkit" />
+              <div class="project-overlay">
+                <a href="https://ankitsarraf07.github.io/Drumkit/" target="_blank" class="project-link-btn">
+                  <i class="ph ph-arrow-square-out"></i> View Live
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title"><a href="https://ankitsarraf07.github.io/Drumkit/" target="_blank">Digital
+                  Drumkit</a></h3>
+              <p class="project-desc">Creating a beautiful sound experience using this interactive drumkit.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+          <div class="project-card">
+            <div class="project-thumb">
+              <img src="images/proj_2.jpg" alt="Portfolio" />
+              <div class="project-overlay">
+                <a href="https://github.com/Ankitsarraf07/portfolio" target="_blank" class="project-link-btn">
+                  <i class="ph ph-github-logo"></i> View Code
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title"><a href="https://github.com/Ankitsarraf07/portfolio" target="_blank">Portfolio
+                  Website</a></h3>
+              <p class="project-desc">Developed my personal portfolio project showcasing my skills and work.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+          <div class="project-card">
+            <div class="project-thumb">
+              <img src="images/proj_3.jpg" alt="LuxStay" />
+              <div class="project-overlay">
+                <a href="https://luxstay-frontend-react.onrender.com" target="_blank" class="project-link-btn">
+                  <i class="ph ph-arrow-square-out"></i> View Live
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title"><a href="https://luxstay-frontend-react.onrender.com"
+                  target="_blank">LuxStay</a></h3>
+              <p class="project-desc">Hotel booking web application built with React.js — frontend and responsive UI
+                design.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+          <div class="project-card">
+            <div class="project-thumb">
+              <img src="images/proj_6.png" alt="Jan-Tantra" />
+              <div class="project-overlay">
+                <a href="https://github.com/Ankitsarraf07/jan-tantra" target="_blank" class="project-link-btn">
+                  <i class="ph ph-github-logo"></i> View Code
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title"><a href="https://github.com/Ankitsarraf07/jan-tantra"
+                  target="_blank">Jan-Tantra</a></h3>
+              <p class="project-desc">Transparent Local Governance for All Citizens — a MERN stack platform for
+                reporting issues, managing funds, and tracking officer performance.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+          <div class="project-card">
+            <div class="project-thumb">
+              <img src="images/proj_7.png" alt="Vaditra" />
+              <div class="project-overlay">
+                <a href="https://vaditra.vercel.app/" target="_blank" class="project-link-btn">
+                  <i class="ph ph-arrow-square-out"></i> View Live
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title"><a href="https://vaditra.vercel.app/" target="_blank">Vaditra</a></h3>
+              <p class="project-desc">A dynamic music player web application powered by the YouTube API for seamless
+                streaming and playback.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== GitHub CTA ==================== -->
+  <section class="github-cta" id="section-counter">
+    <div class="container" data-aos="fade-up">
+      <h2>More projects on <span>GitHub</span></h2>
+      <p>I love to solve business problems &amp; build innovative applications. Check out my full collection of work.
+      </p>
+      <a href="https://github.com/Ankitsarraf07" target="_blank" class="github-btn">
+        <i class="ph ph-github-logo"></i> GitHub Profile
+      </a>
+    </div>
+  </section>
+
+  <!-- ==================== Contact Section ==================== -->
+  <section class="contact-section" id="contact-section">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <div class="section-label" style="justify-content:center;">Get In Touch</div>
+        <h2 class="section-title">Let's Work Together</h2>
+      </div>
+
+      <div class="row g-5 align-items-start">
+        <!-- Contact Info -->
+        <div class="col-lg-4" data-aos="fade-right" data-aos-duration="1000">
+          <div class="contact-info-item">
+            <div class="contact-info-icon"><i class="ph ph-map-pin"></i></div>
+            <div>
+              <div class="contact-info-label">Location</div>
+              <div class="contact-info-value">Phagwara, Punjab, India</div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon"><i class="ph ph-linkedin-logo"></i></div>
+            <div>
+              <div class="contact-info-label">LinkedIn</div>
+              <div class="contact-info-value">
+                <a href="https://www.linkedin.com/in/ankit-kumar-ak07" target="_blank"
+                  style="color:var(--accent);">ankit-kumar-ak07</a>
+              </div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon"><i class="ph ph-github-logo"></i></div>
+            <div>
+              <div class="contact-info-label">GitHub</div>
+              <div class="contact-info-value">
+                <a href="https://github.com/Ankitsarraf07" target="_blank"
+                  style="color:var(--accent);">Ankitsarraf07</a>
+              </div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon"><i class="ph ph-instagram-logo"></i></div>
+            <div>
+              <div class="contact-info-label">Instagram</div>
+              <div class="contact-info-value">
+                <a href="https://www.instagram.com/ankitt_sarraf/" target="_blank"
+                  style="color:var(--accent);">@ankitt_sarraf</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="col-lg-8" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+          <div class="contact-form-wrap">
+            <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
+              <input type="hidden" name="access_key" value="13a90f16-bff5-4098-ae8c-3ee56c97e906" />
+              <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                  <label class="form-label" for="contact-name">Name</label>
+                  <input type="text" class="form-control" name="name_" id="contact-name" placeholder="Your full name"
+                    required />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="contact-email">Email</label>
+                  <input type="email" class="form-control" name="email" id="contact-email" placeholder="your@email.com"
+                    required />
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="contact-message">Message</label>
+                <textarea class="form-control" name="message" id="contact-message" rows="5"
+                  placeholder="Tell me about your project..." required></textarea>
+              </div>
+              <button type="submit" class="submit-btn">
+                Send Message <i class="ph ph-paper-plane-right"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Footer ==================== -->
+  <footer class="footer-area">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="footer-logo">Ankit<span>.</span></div>
+          <p class="footer-tagline">Full Stack &amp; Flutter Developer crafting digital experiences with clean code and
+            purposeful design.</p>
+          <div class="footer-social-links">
+            <a href="https://www.linkedin.com/in/ankit-kumar-ak07" target="_blank" class="footer-social-link">
+              <i class="ph ph-linkedin-logo"></i> LinkedIn
+            </a>
+            <a href="https://github.com/Ankitsarraf07" target="_blank" class="footer-social-link">
+              <i class="ph ph-github-logo"></i> GitHub
+            </a>
+            <a href="https://www.instagram.com/ankitt_sarraf/" target="_blank" class="footer-social-link">
+              <i class="ph ph-instagram-logo"></i> Instagram
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <h6
+            style="color:#fff;font-family:var(--body-font);font-size:0.8rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;">
+            Navigation</h6>
+          <ul style="display:flex;flex-direction:column;gap:12px;">
+            <li><a href="#home-section"
+                style="color:rgba(255,255,255,0.5);font-size:0.95rem;transition:var(--transition);"
+                class="footer-nav-link">Home</a></li>
+            <li><a href="#about-section"
+                style="color:rgba(255,255,255,0.5);font-size:0.95rem;transition:var(--transition);"
+                class="footer-nav-link">About</a></li>
+            <li><a href="#project-section"
+                style="color:rgba(255,255,255,0.5);font-size:0.95rem;transition:var(--transition);"
+                class="footer-nav-link">Projects</a></li>
+            <li><a href="#contact-section"
+                style="color:rgba(255,255,255,0.5);font-size:0.95rem;transition:var(--transition);"
+                class="footer-nav-link">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3">
+          <h6
+            style="color:#fff;font-family:var(--body-font);font-size:0.8rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;">
+            Tech Stack</h6>
+          <ul style="display:flex;flex-direction:column;gap:12px;">
+            <li style="color:rgba(255,255,255,0.5);font-size:0.95rem;">React.js / Node.js</li>
+            <li style="color:rgba(255,255,255,0.5);font-size:0.95rem;">Flutter / Dart</li>
+            <li style="color:rgba(255,255,255,0.5);font-size:0.95rem;">MongoDB / SQL</li>
+            <li style="color:rgba(255,255,255,0.5);font-size:0.95rem;">Java / C++</li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2025 <span>Ankit Kumar</span>. All rights reserved.</p>
+        <p class="footer-copy">Designed with <span style="color:var(--accent);">♥</span> in India</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== Scripts ==================== -->
+
+  <!-- GSAP CDN (with ScrollTrigger, ScrollSmoother, SplitText) -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+  <!-- AOS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    (function () {
+      "use strict";
+
+      // ==================== Preloader (GSAP) ====================
+      document.addEventListener("DOMContentLoaded", () => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const tl = gsap.timeline();
+        const svg = document.getElementById("preloaderSvg");
+        const curve = "M0 502S175 272 500 272s500 230 500 230V0H0Z";
+        const flat = "M0 2S175 1 500 1s500 1 500 1V0H0Z";
+
+        tl.to(".preloader-heading .load-text", { delay: 1, y: -80, opacity: 0, duration: 0.6 })
+          .to(svg, { duration: 0.6, attr: { d: curve }, ease: "power2.inOut" })
+          .to(svg, { duration: 0.6, attr: { d: flat }, ease: "power2.inOut" })
+          .to("#preloader", { y: "-130%", duration: 0.8, ease: "power4.inOut" })
+          .set("#preloader", { display: "none", zIndex: -1 });
+
+        // ==================== AOS Init ====================
+        AOS.init({
+          once: false,
+          offset: 0,
+          anchorPlacement: "top-bottom",
+          duration: 900,
+        });
+
+        // ==================== Skill Bars ====================
+        const fills = document.querySelectorAll(".skill-fill");
+        fills.forEach(fill => {
+          const w = fill.getAttribute("data-width");
+          ScrollTrigger.create({
+            trigger: fill,
+            start: "top 85%",
+            once: true,
+            onEnter: () => { fill.style.width = w + "%"; }
+          });
+        });
+      });
+
+      // ==================== Sticky Header ====================
+      window.addEventListener("scroll", () => {
+        const header = document.getElementById("header");
+        if (window.scrollY >= 80) {
+          header.classList.add("fixed-header");
+        } else {
+          header.classList.remove("fixed-header");
+        }
+      });
+
+      // ==================== Back to Top ====================
+      const backToTopWrapper = document.getElementById("backToTopWrapper");
+      const backToTopBtn = document.getElementById("back_to_top");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          backToTopWrapper.classList.add("back-to-top-btn-show");
+        } else {
+          backToTopWrapper.classList.remove("back-to-top-btn-show");
+        }
+      });
+      backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      // ==================== Scroll Progress ====================
+      const progressBar = document.getElementById("scrollProgress");
+      window.addEventListener("scroll", () => {
+        const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = (window.scrollY / scrollTotal) * 100;
+        progressBar.style.width = scrolled + "%";
+      });
+
+      // ==================== Magic Cursor ====================
+      const ball = document.getElementById("ball");
+      let mouseX = 0, mouseY = 0;
+      let ballX = 0, ballY = 0;
+      const speed = 0.12;
+
+      document.addEventListener("mousemove", e => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      });
+
+      function animateCursor() {
+        ballX += (mouseX - ballX) * speed;
+        ballY += (mouseY - ballY) * speed;
+        ball.style.left = (ballX - 20) + "px";
+        ball.style.top = (ballY - 20) + "px";
+        requestAnimationFrame(animateCursor);
+      }
+      animateCursor();
+
+      // Cursor hover effect on links/buttons
+      document.querySelectorAll("a, button").forEach(el => {
+        el.addEventListener("mouseenter", () => {
+          ball.style.width = "60px";
+          ball.style.height = "60px";
+          ball.style.borderColor = "#FF5101";
+          ball.style.backgroundColor = "rgba(255,81,1,0.1)";
+        });
+        el.addEventListener("mouseleave", () => {
+          ball.style.width = "40px";
+          ball.style.height = "40px";
+          ball.style.backgroundColor = "transparent";
+        });
+      });
+
+      // ==================== Hamburger / Mobile Menu ====================
+      const hamburgerBtn = document.getElementById("hamburgerBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const mobileClose = document.getElementById("mobileClose");
+
+      hamburgerBtn.addEventListener("click", () => mobileMenu.classList.add("open"));
+      mobileClose.addEventListener("click", () => mobileMenu.classList.remove("open"));
+      document.querySelectorAll(".mobile-nav-link").forEach(link => {
+        link.addEventListener("click", () => mobileMenu.classList.remove("open"));
+      });
+
+      // ==================== Counter Animation ====================
+      function animateCounter(el, target, duration) {
+        let start = 0;
+        const step = target / (duration / 16);
+        const timer = setInterval(() => {
+          start += step;
+          if (start >= target) { start = target; clearInterval(timer); }
+          el.textContent = Math.floor(start);
+        }, 16);
+      }
+
+      const counterEls = document.querySelectorAll(".purecounter");
+      counterEls.forEach(el => {
+        const target = parseInt(el.getAttribute("data-end") || el.textContent, 10);
+        const duration = parseInt(el.getAttribute("data-duration") || "2000", 10);
+        el.setAttribute("data-end", target);
+
+        ScrollTrigger && ScrollTrigger.create({
+          trigger: el,
+          start: "top 85%",
+          once: true,
+          onEnter: () => animateCounter(el, target, duration)
+        });
+      });
+
+      // ==================== Active nav link on scroll ====================
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".header-nav ul li a");
+      window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach(sec => {
+          if (window.scrollY >= sec.offsetTop - 120) current = sec.getAttribute("id");
+        });
+        navLinks.forEach(link => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === "#" + current) link.classList.add("active");
+        });
+      });
+
+      // ==================== Footer nav hover ====================
+      document.querySelectorAll(".footer-nav-link").forEach(link => {
+        link.addEventListener("mouseenter", () => link.style.color = "#FF5101");
+        link.addEventListener("mouseleave", () => link.style.color = "rgba(255,255,255,0.5)");
+      });
+
+    })();
+  </script>
 
 </body>
 
